@@ -1,0 +1,817 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #d7deeb;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  color: #183b6e;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+  background-color: #1e222b;
+  color: #ffffff;
+}
+
+body.dark-mode .container {
+  background-color: #3f3f3f;
+  color: #d8e9f5;
+}
+
+body.dark-mode input {
+  background-color: #333;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+body.dark-mode .input:focus,
+input:hover {
+  outline: none;
+  border-color: rgba(2, 87, 197, 0.582);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(2, 87, 197, 0.582);
+}
+
+body.dark-mode .restricoes {
+  color: #ccc;
+}
+
+body.dark-mode .autor {
+  color: #ccc;
+}
+
+body.dark-mode nav {
+  display: flex;
+  width: 100%;
+  background-color: #0c1625;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5vh;
+}
+
+body.dark-mode .top {
+  background: #0c1625;
+  color: #fff;
+  transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+}
+
+body.dark-mode .button-icon:hover {
+  border-color: #0c1625;
+}
+body.dark-mode .footer {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center; 
+  width: 100%;
+  background-color: #0c1625; 
+  color: white; 
+  text-align: left; 
+  font-size: 18px; 
+  font-weight: bold;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2); 
+  padding: 15px 20px; 
+  margin-top: auto; 
+}
+
+body.dark-mode .text-footer {
+  display: flex;
+  flex-direction: column; 
+  gap: 5px; 
+}
+
+body.dark-mode .first-row {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
+
+body.dark-mode .text-footer h5 {
+  margin: 0; 
+}
+
+body.dark-mode .Btn-2 {
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: .4s;
+  cursor: pointer;
+  position: relative;
+  background-color: rgb(5, 86, 95);
+  overflow: hidden;
+}
+
+body.dark-mode .Btn-2:hover {
+  background-color: rgb(6, 51, 56);
+}
+
+body.dark-mode .svgIcon {
+  transition-duration: .3s;
+}
+
+body.dark-mode .svgIcon path {
+  fill: white;
+}
+
+body.dark-mode .Btn {
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: .4s;
+  cursor: pointer;
+  position: relative;
+  background-color: rgb(5, 86, 95);
+  overflow: hidden;
+}
+
+body.dark-mode .Btn:hover {
+  width: 110px;
+  transition-duration: .4s;
+  border-radius: 30px;
+  background-color: rgb(6, 51, 56);
+}
+/* aqui termina o Modo Escuro */
+
+/*botão do modo noturno*/
+/* From Uiverse.io by anandita-3217 */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+.switch input {
+  /* all: unset; */
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  background-color: #9eb7cc;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 30px;
+  box-shadow: 0 0 0 rgba(33, 133, 214, 0);
+  transition: all 0.4s ease;
+}
+
+.slider:hover {
+  box-shadow: 0 0 15px rgba(39, 115, 177, 0.5);
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 15px -4px 0px 15px #f5cb42;
+  background-color: #202024;
+  transition: all 0.4s ease;
+  transform-origin: center;
+}
+
+.slider:hover::before {
+  transform: rotate(45deg);
+}
+
+.clouds_stars {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  left: 70%;
+  bottom: 50%;
+  background-color: #fff;
+
+  transition: all 0.3s;
+  box-shadow:
+    -12px 0 0 0 white,
+    -6px 0 0 1.6px white,
+    0.3px 16px 0 white,
+    -6.5px 16px 0 white;
+  filter: blur(0.55px);
+}
+
+.switch input:checked~.clouds_stars {
+  transform: translateX(-20px);
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  left: 80%;
+  top: 15%;
+  background-color: #fff;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  box-shadow:
+    -7px 10px 0 #fff,
+    8px 15px 0 #fff,
+    -17px 1px 0 #fff,
+    -20px 10px 0 #fff,
+    -7px 23px 0 #fff,
+    -15px 25px 0 #fff;
+  filter: none;
+  animation: twinkle 2s infinite;
+}
+
+.switch input:checked+.slider {
+  background-color: #202024 !important;
+}
+
+.switch input:checked+.slider::before {
+  transform: translateX(100%);
+  box-shadow: inset 8px -4px 0 0 #fff;
+}
+
+.switch input:checked+.slider:hover::before {
+  transform: translateX(100%) rotate(-45deg);
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/*Aqui termina o botão do modo noturno*/
+
+nav {
+  display: flex;
+  width: 100%;
+  background-color:#1d447e;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 800px;
+  padding: 50px;
+  color: #104d92;
+}
+
+.input_linha {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.input_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  padding: 10px;
+}
+
+label {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 9px;
+  border-radius: 7px;
+  border: 1px solid #757575;
+  text-align: center;
+  width: 100%;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  border-color: rgba(0, 32, 73, 0.582);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 47, 73, 0.185);
+}
+
+@media (max-width: 400px) {
+  .input_group {
+    width: 100%;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#img_sptech {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+/*botão github*/
+.Btn {
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: .4s;
+  cursor: pointer;
+  position: relative;
+  background-color: rgb(109, 173, 180);
+  overflow: hidden;
+}
+
+.svgIcon {
+  transition-duration: .3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.text {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  width: 120px;
+  font-weight: 600;
+  opacity: 0;
+  transition-duration: .4s;
+}
+
+.Btn:hover {
+  width: 110px;
+  transition-duration: .4s;
+  border-radius: 30px;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  transition-duration: .4s;
+}
+
+.Btn:hover .svgIcon {
+  opacity: 0;
+  transition-duration: .3s;
+}
+
+/*aqui termina botão github*/
+
+.navdiv {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center; 
+  width: 100%;
+  background-color: #1d447e; 
+  color: white; 
+  text-align: left; 
+  font-size: 18px; 
+  font-weight: bold;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2); 
+  padding: 15px 20px; 
+  margin-top: auto; 
+}
+
+.text-footer {
+  display: flex;
+  flex-direction: column; 
+  gap: 5px; 
+}
+
+.first-row {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
+
+.text-footer h5 {
+  margin: 0; 
+}
+
+.Btn-2 {
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: .4s;
+  cursor: pointer;
+  position: relative;
+  background-color: rgb(109, 173, 180);
+  overflow: hidden;
+}
+
+.Btn-2:hover {
+  background-color: rgb(49, 126, 134);
+}
+
+.svgIcon {
+  transition-duration: .3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.Mensagem-final {
+  width: 100%; 
+  max-width: 800px; 
+  margin: 10px auto 0; 
+  padding: 0 20px; 
+  text-align: center; 
+}
+
+.Mensagem-final h6 {
+  margin: 0; 
+  font-size: 16px; 
+  color: #6d80a8; 
+}
+
+/*Fantasminha*/
+
+/* From Uiverse.io by BlackisPlay */ 
+/* Container para o h2 e o fantasma */
+.Titulo {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+  justify-content: center; 
+  margin-bottom: 20px; 
+}
+
+/* Estilo do h2 */
+.Titulo h2 {
+  margin: 0; 
+  font-size: 30px; 
+  color: #eef5ff; 
+}
+
+#ghost {
+  position: relative;
+  scale: 0.5; 
+  margin: 0; 
+}
+
+#red {
+  animation: upNDown infinite 0.5s;
+  position: relative;
+  width: 70px; 
+  height: 70px; 
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(14, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-areas:
+    "a1  a2  a3  a4  a5  top0  top0  top0  top0  a10 a11 a12 a13 a14"
+    "b1  b2  b3  top1 top1 top1 top1 top1 top1 top1 top1 b12 b13 b14"
+    "c1 c2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 c13 c14"
+    "d1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 d14"
+    "e1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 e14"
+    "f1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 f14"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "st0 st0 an4 st1 an7 st2 an10 an10 st3 an13 st4 an16 st5 st5"
+    "an1 an2 an3 an5 an6 an8 an9 an9 an11 an12 an14 an15 an17 an18";
+}
+
+@keyframes upNDown {
+  0%,
+  49% {
+    transform: translateY(0px);
+  }
+  50%,
+  100% {
+    transform: translateY(-5px); 
+  }
+}
+
+#top0,
+#top1,
+#top2,
+#top3,
+#top4,
+#st0,
+#st1,
+#st2,
+#st3,
+#st4,
+#st5 {
+  background-color: #019c9c;
+}
+
+#top0 {
+  grid-area: top0;
+}
+
+#top1 {
+  grid-area: top1;
+}
+
+#top2 {
+  grid-area: top2;
+}
+
+#top3 {
+  grid-area: top3;
+}
+
+#top4 {
+  grid-area: top4;
+}
+
+#st0 {
+  grid-area: st0;
+}
+
+#st1 {
+  grid-area: st1;
+}
+
+#st2 {
+  grid-area: st2;
+}
+
+#st3 {
+  grid-area: st3;
+}
+
+#st4 {
+  grid-area: st4;
+}
+
+#st5 {
+  grid-area: st5;
+}
+
+#an1 {
+  grid-area: an1;
+  animation: flicker0 infinite 0.5s;
+}
+
+#an18 {
+  grid-area: an18;
+  animation: flicker0 infinite 0.5s;
+}
+
+#an2 {
+  grid-area: an2;
+  animation: flicker1 infinite 0.5s;
+}
+
+#an17 {
+  grid-area: an17;
+  animation: flicker1 infinite 0.5s;
+}
+
+#an3 {
+  grid-area: an3;
+  animation: flicker1 infinite 0.5s;
+}
+
+#an16 {
+  grid-area: an16;
+  animation: flicker1 infinite 0.5s;
+}
+
+#an4 {
+  grid-area: an4;
+  animation: flicker1 infinite 0.5s;
+}
+
+#an15 {
+  grid-area: an15;
+  animation: flicker1 infinite 0.5s;
+}
+
+#an6 {
+  grid-area: an6;
+  animation: flicker0 infinite 0.5s;
+}
+
+#an12 {
+  grid-area: an12;
+  animation: flicker0 infinite 0.5s;
+}
+
+#an7 {
+  grid-area: an7;
+  animation: flicker0 infinite 0.5s;
+}
+
+#an13 {
+  grid-area: an13;
+  animation: flicker0 infinite 0.5s;
+}
+
+#an9 {
+  grid-area: an9;
+  animation: flicker1 infinite 0.5s;
+}
+
+#an10 {
+  grid-area: an10;
+  animation: flicker1 infinite 0.5s;
+}
+
+#an8 {
+  grid-area: an8;
+  animation: flicker0 infinite 0.5s;
+}
+
+#an11 {
+  grid-area: an11;
+  animation: flicker0 infinite 0.5s;
+}
+
+@keyframes flicker0 {
+  0%,
+  49% {
+    background-color: #019c9c;
+  }
+  50%,
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes flicker1 {
+  0%,
+  49% {
+    background-color: transparent;
+  }
+  50%,
+  100% {
+    background-color: #019c9c;
+  }
+}
+
+#eye {
+  width: 20px; 
+  height: 25px; 
+  position: absolute;
+  top: 15px; 
+  left: 5px; 
+}
+
+#eye::before {
+  content: "";
+  background-color: white;
+  width: 10px; 
+  height: 25px;
+  transform: translateX(5px); 
+  display: block;
+  position: absolute;
+}
+
+#eye::after {
+  content: "";
+  background-color: white;
+  width: 20px; 
+  height: 15px; 
+  transform: translateY(5px); 
+  display: block;
+  position: absolute;
+}
+
+#eye1 {
+  width: 20px;
+  height: 25px; 
+  position: absolute;
+  top: 15px; 
+  right: 15px; 
+}
+
+#eye1::before {
+  content: "";
+  background-color: white;
+  width: 10px; 
+  height: 25px; 
+  transform: translateX(5px); 
+  display: block;
+  position: absolute;
+}
+
+#eye1::after {
+  content: "";
+  background-color: white;
+  width: 20px; 
+  height: 15px; 
+  transform: translateY(5px); 
+  display: block;
+  position: absolute;
+}
+
+#pupil {
+  width: 10px; 
+  height: 10px; 
+  background-color: blue;
+  position: absolute;
+  top: 25px; 
+  left: 5px; 
+  z-index: 1;
+  animation: eyesMovement infinite 3s;
+}
+
+#pupil1 {
+  width: 10px; 
+  height: 10px; 
+  background-color: blue;
+  position: absolute;
+  top: 25px; 
+  right: 25px; 
+  z-index: 1;
+  animation: eyesMovement infinite 3s;
+}
+
+@keyframes eyesMovement {
+  0%,
+  49% {
+    transform: translateX(0px);
+  }
+  50%,
+  99% {
+    transform: translateX(5px); 
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+#shadow {
+  background-color: black;
+  width: 70px; 
+  height: 70px; 
+  position: absolute;
+  border-radius: 50%;
+  transform: rotateX(80deg);
+  filter: blur(10px); 
+  top: 70%; 
+  animation: shadowMovement infinite 0.5s;
+}
+
+@keyframes shadowMovement {
+  0%,
+  49% {
+    opacity: 0.5;
+  }
+  50%,
+  100% {
+    opacity: 0.2;
+  }
+}
